@@ -1,8 +1,8 @@
-# 03 · Hammer & Ember — "Heat the blade. Strike the steel."
+# Hammer & Ember — "Heat the blade. Strike the steel."
 Brand: **Hammer & Ember** — a two-person bladesmith atelier forging pattern-welded (damascus) swords to commission.
 
 ## Signature interaction
-The Viking sword (`models/ember/sword.glb`) lies across the anvil (`anvil.glb`) in a dark smithy lit by a coal forge.
+The Viking sword (`models/sword.glb`) lies across the anvil (`anvil.glb`) in a dark smithy lit by a coal forge.
 - **Scroll heats the steel**: patch the sword's material (onBeforeCompile) to add blackbody emission — heat spreads from
   the tip region toward the guard with noise-broken edges: dull red → cherry → orange → yellow-white (proper blackbody
   ramp, HDR emission so bloom catches it), plus heat shimmer (screen-space distortion above the hot zone) and glowing scale flakes.

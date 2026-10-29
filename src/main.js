@@ -1,14 +1,13 @@
 import './tailwind.css';
 import { ToneMappingMode } from 'postprocessing';
-import { Engine, THREE, normalize, prepModel, damp, clamp, smooth, lerp, studioEnvironment } from '../../src/core/engine.js';
-import { Assets, firstMesh } from '../../src/core/assets.js';
-import { Pointer } from '../../src/core/input.js';
-import { smoothScroll, gsap, reveal, ScrollTrigger } from '../../src/core/scroll.js';
-// ORIGINAL (preserved, not deleted — disabled by comment): import { preloader, cursor, magnetic, worldNav } from '../../src/core/ui.js';
-import { preloader, cursor, magnetic } from '../../src/core/ui.js';
-import { VolumetricSpotEffect } from '../../src/core/volumetric.js';
-import { PlanarReflection } from '../../src/core/reflector.js';
-import { bakeTexture } from '../../src/core/textures.js';
+import { Engine, THREE, normalize, prepModel, damp, clamp, smooth, lerp, studioEnvironment } from './core/engine.js';
+import { Assets, firstMesh } from './core/assets.js';
+import { Pointer } from './core/input.js';
+import { smoothScroll, gsap, reveal, ScrollTrigger } from './core/scroll.js';
+import { preloader, cursor, magnetic } from './core/ui.js';
+import { VolumetricSpotEffect } from './core/volumetric.js';
+import { PlanarReflection } from './core/reflector.js';
+import { bakeTexture } from './core/textures.js';
 import { analyseSword, heatMaterial } from './heat.js';
 import { Sparks, Embers, Steam, HeatHaze, puffTexture } from './fx.js';
 import { ForgeAudio } from './audio.js';
@@ -110,14 +109,14 @@ vol.add(fireSpot, { scale: 0.0016, range: 0.12, softness: 0.6 });
 const T0 = performance.now();
 window.__emberDbg = {};
 const [anvilG, swordG, hammerG, brick, brickN, floorT, floorN, damT] = await Promise.all([
-  assets.gltf('models/ember/anvil.glb'),
-  assets.gltf('models/ember/sword.glb'),
-  assets.gltf('models/ember/hammer.glb'),
-  assets.texture('img/ember/brick.webp'),
-  assets.texture('img/ember/brick-n.webp', { srgb: false }),
-  assets.texture('img/ember/floor.webp'),
-  assets.texture('img/ember/floor-n.webp', { srgb: false }),
-  assets.texture('img/ember/damascus.webp'),
+  assets.gltf('models/anvil.glb'),
+  assets.gltf('models/sword.glb'),
+  assets.gltf('models/hammer.glb'),
+  assets.texture('img/brick.webp'),
+  assets.texture('img/brick-n.webp', { srgb: false }),
+  assets.texture('img/floor.webp'),
+  assets.texture('img/floor-n.webp', { srgb: false }),
+  assets.texture('img/damascus.webp'),
 ]);
 window.__emberDbg.assets = Math.round(performance.now() - T0);
 damT.wrapS = THREE.MirroredRepeatWrapping; damT.wrapT = THREE.ClampToEdgeWrapping; damT.anisotropy = 16; damT.needsUpdate = true;
@@ -750,7 +749,6 @@ function blackbodyJS(K) {
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
-// ORIGINAL (preserved, not deleted — disabled by comment): worldNav('ember', { theme: 'dark', corner: 'bl' });
 if (coarse) { document.querySelector('.k-strike').textContent = 'Tap'; document.querySelector('.k-verb').textContent = 'tap'; }
 magnetic();
 const lenis = smoothScroll({ lerp: 0.08 });

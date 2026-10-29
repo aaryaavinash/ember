@@ -1,7 +1,7 @@
 // The smithy: soot-black brick room, a coal forge with a hood, a brine trough, tools on the wall, a moonlit window.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
-import { bakeTexture, fbmNormal } from '../../src/core/textures.js';
+import { bakeTexture, fbmNormal } from './core/textures.js';
 import { NOISE, BLACKBODY } from './glsl.js';
 
 export const ROOM = { x0: -3.3, x1: 3.9, z0: -2.9, z1: 4.6, h: 3.6 };

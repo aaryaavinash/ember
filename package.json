@@ -1,7 +1,7 @@
 {
   "name": "ember",
   "private": true,
-  "description": "Standalone Hammer & Ember world from Dioramas.",
+  "description": "A bladesmith atelier concept set around the making of a single pattern-welded sword.",
   "license": "MIT",
   "version": "0.1.0",
   "type": "module",
