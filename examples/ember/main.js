@@ -1,9 +1,11 @@
+import './tailwind.css';
 import { ToneMappingMode } from 'postprocessing';
 import { Engine, THREE, normalize, prepModel, damp, clamp, smooth, lerp, studioEnvironment } from '../../src/core/engine.js';
 import { Assets, firstMesh } from '../../src/core/assets.js';
 import { Pointer } from '../../src/core/input.js';
 import { smoothScroll, gsap, reveal, ScrollTrigger } from '../../src/core/scroll.js';
-import { preloader, cursor, magnetic, worldNav } from '../../src/core/ui.js';
+// ORIGINAL (preserved, not deleted — disabled by comment): import { preloader, cursor, magnetic, worldNav } from '../../src/core/ui.js';
+import { preloader, cursor, magnetic } from '../../src/core/ui.js';
 import { VolumetricSpotEffect } from '../../src/core/volumetric.js';
 import { PlanarReflection } from '../../src/core/reflector.js';
 import { bakeTexture } from '../../src/core/textures.js';
@@ -748,7 +750,7 @@ function blackbodyJS(K) {
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
-worldNav('ember', { theme: 'dark', corner: 'bl' });
+// ORIGINAL (preserved, not deleted — disabled by comment): worldNav('ember', { theme: 'dark', corner: 'bl' });
 if (coarse) { document.querySelector('.k-strike').textContent = 'Tap'; document.querySelector('.k-verb').textContent = 'tap'; }
 magnetic();
 const lenis = smoothScroll({ lerp: 0.08 });
